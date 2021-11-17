@@ -1,40 +1,55 @@
 <!doctype html>
 <html>
 <head>
-  <title> testing tracker </title>
+  <title> Tracker test</title>
+  <!-- meta tags here           -->
+  <!-- improve by adding style 
+       and html5 semantic tags  -->
+  <!-- javascript here          -->
 </head>
 <body>
-  <h1>Tracker test</h1>
-  <p>Check your cookies</p>
-  <div> 
-    This image <img src="trac.php"> should be identical to this 
-    <img src="tracking.png">
-  </div>
-  <div>
-    <h2>TODO</h2>
-    <ul>
-        <li> check tracker log file </li>
-        <li> summary of log. linux cron job / windows scheduler </li>
-        <li> echo cookie using javascript below </li>
-    <ul>
-  </div>
-  <div>
-    <span id="trac_uid">trac_uid </span>
-    <span id="trac_val">trac_val </span>
-  </div>
-  <div>
-    <h2>References </h2>
-    <ul>
-        <li> <a href="https://www.w3schools.com/php/func_filesystem_readfile.asp">PHP readfile function </a> </li>
-        <li> <a href="https://www.php.net/manual/en/function.file-put-contents.php">Appending to file </a> </li>
-        <li> <a href="https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php">How to get the client IP address in PHP </a> </li>
-        <li> <a href="https://www.php.net/manual/en/language.operators.string.php">String Operators</a> </li>
-        <li> <a href="https://www.w3schools.com/php/php_cookies.asp">Create Cookies With PHP
+  <h1>Tracker test</h1> 
+  <p>
+    This is a homebrew tracker - gratis, free of charge,<br>
+    and of course no guarantees are given.
+  </p>
+  <p>
+    This page calls track.php. The server serves an image <br>
+    and sets the cookies tracUid and tracVal.</p>
+  <p>
+    These images should be identical. The first <br>
+    image is read from a script and then passed <br>
+    via the webserver to the webclient. The other<br>
+    one is read and passed by the server directly.
+  </p>    
+  <p> 
+   Via script: <img src="trac.php?oid=000001"> Direct: <img src="logoImg.png">
+  </p>
+  <h3>Check your cookies!</h3>
+
+  <h2>TODO</h2>
+  <ul>
+      <li> Check tracker log file </li>
+      <li> Summary of log. linux cron job / windows scheduler </li>
+      <li> Echo cookie using javascript below </li>
+  </ul>
+  <h3> Display cookie val here using DOM</h3>
+  <p>
+    tracUid:   <span id="tracUid">--</span>
+    tracVal:   <span id="tracVal">--</span>
+  </p>
+  <h2>References </h2>
+  <ul>
+    <li> <a href="https://www.w3schools.com/php/func_filesystem_readfile.asp">PHP readfile function </a> </li>
+    <li> <a href="https://www.php.net/manual/en/function.file-put-contents.php">Appending to file </a> </li>
+    <li> <a href="https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php">How to get the client IP address in PHP </a> </li>
+    <li> <a href="https://www.php.net/manual/en/language.operators.string.php">String Operators</a> </li>
+    <li> <a href="https://www.w3schools.com/php/php_cookies.asp">Create Cookies With PHP
  </a> </li>
-        <li> <a href="https://stackoverflow.com/questions/18252668/using-php-to-send-a-certain-image/18252728">Echo image using PHP </a> </li>
-        <li> <a href="">...</a> </li>
-    <ul>
-  </div>
-</body>
+    <li> <a href="https://stackoverflow.com/questions/18252668/using-php-to-send-a-certain-image/18252728">Echo image using PHP </a> </li>
+    <li> <a href="https://www.php.net/manual/en/reserved.variables.get.php">$_GET</a> </li>
+    <li> <a href="">...</a> </li>
+  <ul>
+  </body>
 </html>
 

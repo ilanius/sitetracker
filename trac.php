@@ -4,15 +4,16 @@
 /* **************************** */
 header('Content-type: image/png');
 header('Content-Disposition: inline; filename="tracking.png"');
-$uid = isset($_COOKIE['trac_uid']) ? $_COOKIE['trac_uid'] : 'trac'. time();
-$val = ( isset($_COOKIE['trac_val']) ? $_COOKIE['trac_val'] : 0 ) + 1;
+$uid = isset($_COOKIE['tracUid'])       ?  $_COOKIE['tracUid'] : 'trac'. time();
+$val = ( isset($_COOKIE['tracVal'])     ?  $_COOKIE['tracVal'] : 0 ) + 1;
 $rip = isset( $_SERVER['REMOTE_ADDR'] ) ?  $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+$oid = isset( $_GET['oid'] )            ?  $_GET['oid'] : '0';
 
-setcookie('trac_uid', $uid, time() + (86400*365), "/" );
-setcookie('trac_val', $val, time() + (86400*365), "/" );
+setcookie('tracUid', $uid, time() + (86400*365), "/" );
+setcookie('tracVal', $val, time() + (86400*365), "/" );
 
 // echo " val: ".$val . " uid: ".$uid . " rip: ".$rip;
 
-file_put_contents('./tracking.log', $rip.'    '.$uid.'    '.$val."\n", FILE_APPEND );
-echo readfile("tracking.png");
+file_put_contents('./tracking.log', $rip.'  '.$uid.'  '.$val.'  '.$oid."\n", FILE_APPEND );
+echo readfile("logoImg.png");
 ?>
