@@ -13,6 +13,6 @@ setcookie('trac_val', $val, time() + (86400*365), "/" );
 
 // echo " val: ".$val . " uid: ".$uid . " rip: ".$rip;
 
-file_put_contents('./traclog', $rip.'    '.$uid.'    '.$val."\n", FILE_APPEND );
+file_put_contents('./tracking.log', $rip.'    '.$uid.'    '.$val."\n", FILE_APPEND );
 echo readfile("tracking.png");
 ?>
